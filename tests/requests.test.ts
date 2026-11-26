@@ -121,7 +121,7 @@ test("заявка пользователя добавляется в стары
   assert.deepEqual(updated.slice(1), before);
   assert.equal(updated[0]?.id, 1043);
   assert.equal(updated[0]?.title, projectRequestTitle);
-  assert.equal(updated[0]?.description, "Учебная проверка оборудования");
+  assert.equal(updated[0]?.description, "Витя не работает");
   assert.equal(updated[0]?.priority, "urgent");
   assert.equal(ensureProjectRequest(updated), updated);
 });

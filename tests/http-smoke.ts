@@ -30,7 +30,7 @@ export async function verifyHttp(base: string) {
     await fetch(`${base}/api/requests/1043`)
   ).json()) as ApiItem<ApiRequest>;
   assert.equal(signature.data.title, "не работает перчик");
-  assert.equal(signature.data.description, "Учебная проверка оборудования");
+  assert.equal(signature.data.description, "Витя не работает");
   const filtered = await list(
     "?q=CRM&status=in_progress&priority=high&sort=oldest",
   );
@@ -80,7 +80,7 @@ export async function verifyHttp(base: string) {
     assert.equal(response.status, 200, path);
     const html = await response.text();
     assert.ok(html.includes("WorkFlow"));
-    if (path === "/requests/1043") assert.ok(html.includes("Учебная проверка оборудования"));
+    if (path === "/requests/1043") assert.ok(html.includes("Витя не работает"));
   }
   const direct = await (
     await fetch(`${base}/requests?q=CRM&status=in_progress&priority=high`)
